@@ -194,16 +194,7 @@
       </thead>
       <tbody>
       
-        <!-- Make into Function-->
-        <tr class='clickable-row' data-href='#view'>
-          <td>Marvel</td>
-          <td>X-Men</td>
-          <td>Nov 1971</td>
-          <td>21</td>
-          <td>Nov 1971</td>
-          <td>$1.25</td>
-          <td>Good</td>
-        </tr>
+        
 
         <?php
           include("js/dbconnection.php");
@@ -212,7 +203,7 @@
           $sql = "SELECT * FROM `myCBC` WHERE 1";
           $result = $conn->query($sql) or die($conn->error);
           
-          echo "<table><thead><tr><th>Publisher</th><th>Title</th><th>Issue Date</th><th>Issue Number</th><th>Barcode</th><th>Issue Cost</th><th>Condition</th></tr></thead>";
+         
           while($row = $result->fetch_assoc()) {
             echo
               "<tr>
@@ -225,7 +216,6 @@
                 "<td>".$row['Condition']."</td>".
               "</tr>\n";
           }
-          echo "</table>";
           
           $conn->close();
         ?>
