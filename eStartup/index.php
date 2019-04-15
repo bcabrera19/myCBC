@@ -29,6 +29,9 @@
   <!-- Main Stylesheet File -->
   <link href="css/style.css" rel="stylesheet">
 
+  <!-- Bryan Added Stylsheet-->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+  
   <!-- =======================================================
     Theme Name: eStartup
     Theme URL: https://bootstrapmade.com/estartup-bootstrap-landing-page-template/
@@ -86,8 +89,7 @@
       <div class="section-title text-center">
 
         <h2>simple & elegant comicbook database</h2>
-        <p class="separator">Integer cursus bibendum augue ac cursus .</p>
-
+        
       </div>
     </div>
 
@@ -173,23 +175,53 @@
     <div class="container">
       <div class="section-title text-center">
         <h2>Comics.</h2>
-        <p class="separator">Integer cursus bibendum augue ac cursus .</p>
+        <p class="separator">Explore your collection.</p>
       </div>
     </div>
 
+    
     <button type="button" class="btn btn-success">Add Comic Book</button>
     
-    
+    <form action="/hms/accommodations" method="GET"> 
+      <div class="row">
+        <div class="col-xs-6 col-md-4">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search" id="txtSearch"/>
+            <div class="input-group-btn">
+              <button class="btn" type="submit">
+                <span class="glyphicon glyphicon-search"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+
+
     <table class="table table-hover">
       <thead>
         <tr>
           <th scope="col">Publisher</th>
           <th scope="col">Title</th>
+          <th scope="col">Sub-Title</th>
           <th scope="col">Issue Date</th>
           <th scope="col">Issue Number</th>
-          <th scope="col">Barcode</th>
           <th scope="col">Issue Cost</th>
           <th scope="col">Condition</th>
+          <th scope="col">Cover</th>
+        </tr>
+        <tr>
+          <form action="js/Insert.php" method="post">
+            <th><input type="text" name="Publisher"></th>
+            <th><input type="text" name="Title"></th>
+            <th><input type="text" name="Sub-Title"></th>
+            <th><input type="text" name="iDate"></th>
+            <th><input type="text" name="iNumber"></th>
+            <th><input type="text" name="cPrice"></th>
+            <th><input type="text" name="Condition"></th>
+            <th><input type="text" name="Cover"></th>
+            <input type="submit" value="Insert">
+          </form>
         </tr>
       </thead>
       <tbody>
@@ -209,11 +241,12 @@
               "<tr>
                 <td>".$row['Publisher']."</td>".
                 "<td>".$row['Title']."</td>".
+                "<td>".$row['Sub-Title']."</td>".
                 "<td>".$row['iDate']."</td>".
                 "<td>".$row['iNumber']."</td>".
-                "<td>".$row['Barcode']."</td>".
                 "<td>".$row['cPrice']."</td>".
                 "<td>".$row['Condition']."</td>".
+                //"<td>".'<img src="data:image/jpeg;base64,'.base64_encode($row['img']).' "height="75" width="50"/>';"</td>".
               "</tr>\n";
           }
           
@@ -235,7 +268,6 @@
     <div class="container">
       <div class="section-title text-center">
         <h2>App Gallery</h2>
-        <p class="separator">Integer cursus bibendum augue ac cursus .</p>
       </div>
     </div>
 
@@ -257,22 +289,6 @@
 
   </section>
 
-  <!--==========================
-    Video Section
-  ============================-->
-  <!--
-  <section id="video" class="text-center wow fadeInUp">
-    <div class="overlay">
-      <div class="container-fluid container-full">
-
-        <div class="row">
-          <a href="#" class="js-modal-btn play-btn" data-video-id="s22ViV7tBKE"></a>
-        </div>
-
-      </div>
-    </div>
-  </section>
-  -->
 
   <!--==========================
     Team Section
@@ -348,7 +364,7 @@
     <div class="container">
       <div class="section-title text-center">
         <h2>Contact</h2>
-        <p class="separator">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+        <p class="separator">Shine your signal spotlight and leave your information. We'll reply in a flash.</p>
       </div>
     </div>
 
@@ -360,17 +376,17 @@
           <div class="info">
             <div>
               <i class="fa fa-map-marker"></i>
-              <p>A108 Adam Street<br>New York, NY 535022</p>
+              <p>777 Glades Rd<br>Boca Raton, FL 33431</p>
             </div>
 
             <div class="email">
               <i class="fa fa-envelope"></i>
-              <p>info@example.com</p>
+              <p>email@fau.edu</p>
             </div>
 
             <div>
               <i class="fa fa-phone"></i>
-              <p>+1 5589 55488 55s</p>
+              <p>+1 (561) 297-3000</p>
             </div>
           </div>
 
